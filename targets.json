@@ -1,0 +1,24 @@
+{
+  "_comment": "Sized for the 250/month SerpAPI free plan. 18 targets leaves headroom for the prospector, which paying features use and which must never be starved by a background crawl.",
+  "monthlyBudget": 60,
+  "targets": [
+    { "service": "roofers", "location": "Manchester, UK" },
+    { "service": "plumbers", "location": "Manchester, UK" },
+    { "service": "electricians", "location": "Manchester, UK" },
+    { "service": "pressure washing", "location": "Manchester, UK" },
+    { "service": "landscapers", "location": "Manchester, UK" },
+    { "service": "roofers", "location": "Glasgow, UK" },
+    { "service": "plumbers", "location": "Glasgow, UK" },
+    { "service": "electricians", "location": "Glasgow, UK" },
+    { "service": "pressure washing", "location": "Glasgow, UK" },
+    { "service": "landscapers", "location": "Glasgow, UK" },
+    { "service": "roofers", "location": "Birmingham, UK" },
+    { "service": "plumbers", "location": "Birmingham, UK" },
+    { "service": "electricians", "location": "Birmingham, UK" },
+    { "service": "roofers", "location": "Leeds, UK" },
+    { "service": "plumbers", "location": "Leeds, UK" },
+    { "service": "electricians", "location": "Leeds, UK" },
+    { "service": "accountants", "location": "Glasgow, UK" },
+    { "service": "accountants", "location": "Manchester, UK" }
+  ]
+}

@@ -1,0 +1,37 @@
+name: monthly directory crawl
+on:
+  schedule:
+    # 03:00 on the 1st. Off-peak for the APIs, and a month is the right cadence:
+    # business listings do not change faster than that, and more frequent
+    # crawling would spend quota to observe noise.
+    - cron: "0 3 1 * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Run without writing to SKAIL"
+        type: boolean
+        default: false
+
+concurrency:
+  # Two crawls at once would double-spend the quota and write duplicate
+  # observations for the same day.
+  group: directory-crawl
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - name: no secrets in a public tree
+        run: node scripts/no-secrets.mjs
+      - name: crawl
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          SKAIL_SERVICE_TOKEN: ${{ secrets.SKAIL_SERVICE_TOKEN }}
+          SKAIL_API_URL: ${{ secrets.SKAIL_API_URL }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: node scripts/crawl.mjs
