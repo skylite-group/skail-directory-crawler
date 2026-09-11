@@ -83,6 +83,12 @@ async function main() {
   if (!b) { console.error("could not read SerpAPI budget — refusing to guess"); process.exit(1); }
   console.log(`SerpAPI: ${b.plan}, ${b.used} used this month, ${b.left} left`);
 
+  // min() across all three limits: how many targets exist, what we budgeted
+  // for a month, and what is left after reserving the prospector's quota.
+  // An earlier version compared against monthlyBudget FIRST, which meant a
+  // dwindling quota still ran the full 18 until it crossed the reserve in one
+  // step — the crawl would look healthy right up to the moment it starved the
+  // prospector. Degrading gradually is the point of having a budget at all.
   const affordable = Math.max(0, Math.min(targets.length, monthlyBudget, b.left - RESERVE_FOR_PROSPECTOR));
   if (affordable === 0) {
     // Not an error. Refusing to spend the prospector's quota is the correct
