@@ -12,6 +12,9 @@ on:
         type: boolean
         default: false
 
+permissions:
+  contents: write
+
 concurrency:
   # Two crawls at once would double-spend the quota and write duplicate
   # observations for the same day.
@@ -24,6 +27,8 @@ jobs:
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
       - uses: actions/setup-node@v4
         with: { node-version: "20" }
       - name: no secrets in a public tree
