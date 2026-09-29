@@ -2,7 +2,7 @@ name: guard
 on: [push, pull_request]
 jobs:
   secrets:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, saig]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

@@ -23,7 +23,7 @@ concurrency:
 
 jobs:
   crawl:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, saig]
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
