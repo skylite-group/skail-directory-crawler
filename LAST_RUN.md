@@ -1,21 +1,14 @@
-SerpAPI: Free Plan, 18 used this month, 232 left
-  ok roofers Manchester, UK: 20 businesses
-  ok plumbers Manchester, UK: 20 businesses
-  ok electricians Manchester, UK: 20 businesses
-  ok pressure washing Manchester, UK: 20 businesses
-  ok landscapers Manchester, UK: 20 businesses
-  ok roofers Glasgow, UK: 20 businesses
-  ok plumbers Glasgow, UK: 20 businesses
-  ok electricians Glasgow, UK: 20 businesses
-  ok pressure washing Glasgow, UK: 20 businesses
-  ok landscapers Glasgow, UK: 20 businesses
-  ok roofers Birmingham, UK: 20 businesses
-  ok plumbers Birmingham, UK: 20 businesses
-  ok electricians Birmingham, UK: 20 businesses
-  ok roofers Leeds, UK: 20 businesses
-  ok plumbers Leeds, UK: 20 businesses
-  ok electricians Leeds, UK: 20 businesses
-  ok accountants Glasgow, UK: 20 businesses
-  ok accountants Manchester, UK: 20 businesses
-
-Done: 360 observations recorded, 0 failed.
+SerpAPI: Free Plan, 33 used this month, 217 left
+TypeError: fetch failed
+    at node:internal/deps/undici/undici:14976:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async json (file:///opt/gh-runners/skail-directory-crawler/_work/skail-directory-crawler/skail-directory-crawler/scripts/crawl.mjs:25:13)
+    at async main (file:///opt/gh-runners/skail-directory-crawler/_work/skail-directory-crawler/skail-directory-crawler/scripts/crawl.mjs:108:20) {
+  [cause]: Error: getaddrinfo ENOTFOUND skail.skylite.group
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26) {
+    errno: -3007,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'skail.skylite.group'
+  }
+}
