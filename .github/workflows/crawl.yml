@@ -1,11 +1,6 @@
 # Schedule moved to saig-runner (guide §7c, 1 Oct 2026): 0 3 1 * * UTC — the runner dispatches this workflow on time.
 name: monthly directory crawl
 on:
-  schedule:
-    # 03:00 on the 1st. Off-peak for the APIs, and a month is the right cadence:
-    # business listings do not change faster than that, and more frequent
-    # crawling would spend quota to observe noise.
-    - cron: "0 3 1 * *"
   workflow_dispatch:
     inputs:
       dry_run:
