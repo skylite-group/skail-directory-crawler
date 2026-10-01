@@ -1,3 +1,4 @@
+# Schedule moved to saig-runner (guide §7c, 1 Oct 2026): 0 3 1 * * UTC — the runner dispatches this workflow on time.
 name: monthly directory crawl
 on:
   schedule:
